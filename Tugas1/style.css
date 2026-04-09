@@ -1,0 +1,46 @@
+* {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #fff8f2;
+    color: #333;
+    font-size: 14px;
+    margin: 0;
+}
+.navbar {
+    background-color: #c0392b;
+    position: fixed;
+    width: 100%;
+    display: flexbox;
+    justify-content: space-between;
+    align-items: center;
+}   
+
+
+.hero{
+    background-color: #c0392b;
+    padding: 20px;
+    display: flexbox;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.menu{
+
+
+}
+
+.card-container{
+    display: flexbox;
+    flex-direction: row;
+    margin: 20px;
+    
+
+}
+.card {
+
+}
+.about {
+    background-color: #c0392b;
+    color: #fadadd;
+    display: flexbox;
+
+}
