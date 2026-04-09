@@ -1,0 +1,42 @@
+.judul {
+   background-color: blue;
+   color: white;
+   text-align: center; 
+}
+.hari {
+    display: grid;
+    background-color: #eef2ff;
+    text-align: center;
+}
+.tanggal {
+    background: transparent;
+}
+.t {
+    min-height: 80px;
+    padding: 8px;
+    border-radius: 8px;
+    position: relative;
+    background-color: #f9fafb;
+
+}
+.t:hover{
+    background-color: #e0e7ff;
+}
+.tKerja {
+    background-color: blue;
+    color: white;
+    
+}
+.event{
+    display: block;
+    .m{
+        background-color: #22c55e;
+
+    }
+    .d {
+        background-color: #22c5c2;
+    }
+    .c {
+        background-color: #c5bd22;
+    }
+}
