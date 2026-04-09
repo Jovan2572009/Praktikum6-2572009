@@ -1,42 +1,93 @@
-.judul {
-   background-color: blue;
-   color: white;
-   text-align: center; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
-.hari {
+
+body {
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.calendar-container {
+    width: 100%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.calendar-days {
     display: grid;
+    grid-template-columns: repeat(7, 1fr);
     background-color: #eef2ff;
     text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
 }
-.tanggal {
-    background: transparent;
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 15px;
 }
-.t {
+
+.date,
+.empty {
     min-height: 80px;
     padding: 8px;
     border-radius: 8px;
+}
+
+.empty {
+    background-color: transparent;
+}
+
+.date {
     position: relative;
     background-color: #f9fafb;
-
+    font-weight: 500;
+    transition: background-color 0.2s;
 }
-.t:hover{
+
+.date:hover {
     background-color: #e0e7ff;
 }
-.tKerja {
-    background-color: blue;
-    color: white;
-    
-}
-.event{
-    display: block;
-    .m{
-        background-color: #22c55e;
 
-    }
-    .d {
-        background-color: #22c5c2;
-    }
-    .c {
-        background-color: #c5bd22;
-    }
+.today {
+    background-color: blue !important;
+    color: white;
+}
+
+.event {
+    display: block;
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+    color: white;
+}
+
+.meeting {
+    background-color: #22c55e;
+}
+
+.doctor {
+    background-color: #22c5c2;
+}
+
+.class {
+    background-color: #c5bd22;
 }

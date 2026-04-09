@@ -1,93 +1,183 @@
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
     background-color: #f4f4f9;
 }
-nav {
-    background-color: #2c3e50;
-    display: flex;
 
+
+.nav-checkbox {
+    display: none;
 }
-nav a {
-    display: block;
-    text-decoration: none;
-}
-nav a:hover {
-    color: #1abc9c;
-}
-.sidebar {
-    background-color: #34495e;
+
+
+.navbar {
+    background-color: #2c3e50;
+    color: white;
+    height: 60px;
+    width: 100%;
     position: fixed;
-    
-}
-.card {
+    top: 0;
     display: flex;
-    border-radius: 1000px;
-    max-width: 1000px;
-    background-color: white;
-    border: 1px solid #ddd;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1001;
 }
+
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+    display: none;
+}
+
+
+.sidebar {
+    background-color: #344956;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    padding-top: 20px;
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #1abc9c;
+}
+
+
+.content-wrapper {
+    margin-left: 250px;
+    padding: 100px 20px 40px 20px;
+    display: flex;
+    justify-content: center;
+    transition: opacity 0.3s;
+}
+
+
+.profile-card {
+    background-color: white;
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
 .card-left {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #f8f95a;
-    border-right:1px solid #eee ;
-
-    .name {
-        color: #333;
-    }
-    .add {
-        color: #666;
-    }
-
+    border-right: 1px solid #eee;
 }
-.logo {
-    display: flex;
-    align-items: center;
-    color: white;
+
+.logo-box {
     background-color: #2c3e50;
+    color: white;
     width: 20vw;
     height: 10vw;
-    min-width: 80px;
-    min-height: 150px;
-
-}
-.card-right {
+    min-width: 150px;
+    min-height: 80px;
     display: flex;
     align-items: center;
-    color: #444;
-    
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
-@media(max-width: 900px) {
-    .card {
-        flex-direction: column;
-        .card-left{
-            border-right: none;
-            border-bottom: 1px #eee;
-            width: 150px;
-            height: 150px;
+.company-name {
+    color: #333;
+    margin-bottom: 5px;
+}
 
-        }
+.company-address {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+.card-right {
+    flex: 2;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.explanation h4 {
+    margin-bottom: 15px;
+}
+
+.explanation p {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+
+@media (max-width: 900px) {
+    .profile-card {
+        flex-direction: column;
+    }
+
+    .card-left {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .logo-box {
+        width: 150px;
+        height: 150px;
     }
 }
-@media(max-width: 600px) {
-    #check {
+
+
+@media (max-width: 600px) {
+    .hamburger {
         display: block;
     }
+
     .sidebar {
         left: -250px;
-
     }
-    #check:active{
-        .sidebar {
-            left: 0;
-            opacity: 0.5;
-        }    
+
+    .content-wrapper {
+        margin-left: 0;
+    }
+
+
+    .nav-checkbox:checked~.sidebar {
+        left: 0;
+    }
+
+    .nav-checkbox:checked~.content-wrapper {
+        opacity: 0.5;
     }
 }
